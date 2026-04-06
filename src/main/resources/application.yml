@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:rbacdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:MzI0MzQ2NmM3MGY4NDA2Y2I1N2Y4YTFlZjdmY2Q1YWIyMTQ3YjA5NGNhYjJmNGI5Mzg4MjE2YWY0NTRiMTQ3NQ==}
+    expiration-ms: ${JWT_EXPIRATION_MS:3600000}
